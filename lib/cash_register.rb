@@ -1,5 +1,3 @@
-require "pry"
-
 class CashRegister
   attr_accessor :total, :discount
   attr_reader :items
@@ -8,12 +6,9 @@ class CashRegister
     @discount = discount
     @total = 0.0
     @items = []
-
   end
 
   def add_item(title, price, quantity = 1)
-    # accepts a title and a price and increases the total (FAILED - 1)
-    # also accepts an optional quantity (FAILED - 2)
     @previous_total = self.total
     self.total += price * quantity
     quantity.times {@items << title}
@@ -26,12 +21,6 @@ class CashRegister
     else
       "There is no discount to apply."
     end
-    # the cash register was initialized with an employee discount
-    #   applies the discount to the total price (FAILED - 4)
-    #   returns success message with updated total (FAILED - 5)
-    #   reduces the total (FAILED - 6)
-    # the cash register was not initialized with an employee discount
-    #   returns a string error message that there is no discount to apply (FAILED - 7)
   end
 
   def void_last_transaction
