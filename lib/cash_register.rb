@@ -14,7 +14,7 @@ class CashRegister
   def add_item(title, price, quantity = 1)
     # accepts a title and a price and increases the total (FAILED - 1)
     # also accepts an optional quantity (FAILED - 2)
-    @previos_total = self.total
+    @previous_total = self.total
     self.total += price * quantity
     quantity.times {@items << title}
   end
